@@ -1224,7 +1224,7 @@ class RawConfigParser(MutableMapping):
         """
         if value is None:
             raise ValueError('Not a boolean: None')
-        if value.lower() not in self.BOOLEAN_STATES:
+        if value is None or value.lower() not in self.BOOLEAN_STATES:
             raise ValueError('Not a boolean: %s' % value)
         return self.BOOLEAN_STATES[value.lower()]
 
